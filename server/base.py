@@ -122,7 +122,9 @@ class RobustServer(BaseServer):
         self.attacker = attacker
 
     def aggregate(self, models, weights):
-        if self.conf.server.use_gas:
+        if self.conf.server.mode == "agas":
+            agg_model = self.agas_aggregate(models, weights)
+        elif self.conf.server.mode == "gas":
             agg_model = self.gas_aggregate(models, weights)
         else:
             flat_models, struct = flatten_models(models)
@@ -137,7 +139,7 @@ class RobustServer(BaseServer):
             agg_model.load_state_dict(agg_state_dict)
         return agg_model
 
-    '''
+
     @torch.no_grad()
     def gas_aggregate(self, models, weights):
         # flatten models
@@ -169,7 +171,7 @@ class RobustServer(BaseServer):
         agg_model.load_state_dict(agg_state_dict)
         
         return agg_model
-    '''
+
     def compute_mahalanobis_distance(self, flat_models):
         mean_vector = flat_models.mean(dim = 0)
         cov_matrix = torch.cov(flat_models.T)
@@ -185,7 +187,7 @@ class RobustServer(BaseServer):
     
 
     @torch.no_grad()
-    def gas_aggregate(self, models, weights, method='none', **kwargs):
+    def agas_aggregate(self, models, weights, method='none', **kwargs):
         # Flatten the models
         flat_models, struct = flatten_models(models)
 
