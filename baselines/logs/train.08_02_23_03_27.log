@@ -1,0 +1,66 @@
+2024-08-02 23:03:27,960 [MainThread] [INFO ]  Configurations: {'task_id': '', 'data': {'root': './datasets', 'dataset': 'cifar10', 'split_type': 'dir', 'min_size': 10, 'data_amount': 0.05, 'iid_fraction': 0.1, 'user': False, 'train_test_split': 0.9, 'class_per_client': 1, 'num_of_clients': 10, 'alpha': 0.5, 'weights': None}, 'model': 'resnet18', 'test_mode': 'test_in_server', 'test_method': 'average', 'server': {'track': False, 'rounds': 10, 'clients_per_round': 10, 'test_every': 1, 'save_model_every': 10, 'save_model_path': '', 'batch_size': 32, 'test_all': False, 'random_selection': True, 'aggregation_stragtegy': 'FedAvg', 'aggregation_content': 'all', 'mode': 'agas', 'gas_p': 1000, 'base_agg': 'bulyan', 'partitioning_method': 'kmeans'}, 'client': {'track': False, 'batch_size': 32, 'test_batch_size': 5, 'local_epoch': 1, 'optimizer': {'type': 'Adam', 'lr': 0.001, 'momentum': 0.9, 'weight_decay': 0}, 'seed': 0, 'local_test': False}, 'gpu': 1, 'distributed': {'backend': 'nccl', 'init_method': '', 'world_size': 0, 'rank': 0, 'local_rank': 0}, 'tracking': {'database': '', 'log_file': '', 'log_level': 'INFO', 'metric_file': '', 'save_every': 1}, 'resource_heterogeneous': {'simulate': False, 'hetero_type': 'real', 'level': 3, 'sleep_group_num': 1000, 'total_time': 1000, 'fraction': 1, 'grouping_strategy': 'greedy', 'initial_default_time': 5, 'default_time_momentum': 0.2}, 'seed': 0, 'attacker': {'byz_ratio': 0.2, 'lie': {'lie_z': 1.5}, 'bit_flip': {'flip_prob': 0.1}, 'min_sum': {'min_value': -1}, 'ipm': {'scale_factor': 0.01}}, 'is_distributed': False, 'device': 0}
+2024-08-02 23:03:28,032 [MainThread] [INFO ]  Clients in total: 10
+2024-08-02 23:03:28,333 [MainThread] [INFO ]  
+-------- round 0 --------
+2024-08-02 23:03:28,333 [MainThread] [INFO ]  --- start training ---
+2024-08-02 23:03:56,072 [MainThread] [INFO ]  Server train time: 27.737866401672363
+2024-08-02 23:03:56,073 [MainThread] [INFO ]  --- start testing ---
+2024-08-02 23:03:57,858 [MainThread] [INFO ]  Test time 1.78s, Test loss: 0.08, Test accuracy: 10.00%
+2024-08-02 23:03:57,858 [MainThread] [INFO ]  
+-------- round 1 --------
+2024-08-02 23:03:57,859 [MainThread] [INFO ]  --- start training ---
+2024-08-02 23:04:21,859 [MainThread] [INFO ]  Server train time: 23.999597311019897
+2024-08-02 23:04:21,860 [MainThread] [INFO ]  --- start testing ---
+2024-08-02 23:04:23,571 [MainThread] [INFO ]  Test time 1.71s, Test loss: 0.08, Test accuracy: 14.61%
+2024-08-02 23:04:23,572 [MainThread] [INFO ]  
+-------- round 2 --------
+2024-08-02 23:04:23,572 [MainThread] [INFO ]  --- start training ---
+2024-08-02 23:04:47,502 [MainThread] [INFO ]  Server train time: 23.929145336151123
+2024-08-02 23:04:47,503 [MainThread] [INFO ]  --- start testing ---
+2024-08-02 23:04:49,095 [MainThread] [INFO ]  Test time 1.59s, Test loss: 0.05, Test accuracy: 45.35%
+2024-08-02 23:04:49,095 [MainThread] [INFO ]  
+-------- round 3 --------
+2024-08-02 23:04:49,095 [MainThread] [INFO ]  --- start training ---
+2024-08-02 23:05:13,114 [MainThread] [INFO ]  Server train time: 24.01779294013977
+2024-08-02 23:05:13,115 [MainThread] [INFO ]  --- start testing ---
+2024-08-02 23:05:14,586 [MainThread] [INFO ]  Test time 1.47s, Test loss: 0.04, Test accuracy: 54.19%
+2024-08-02 23:05:14,586 [MainThread] [INFO ]  
+-------- round 4 --------
+2024-08-02 23:05:14,586 [MainThread] [INFO ]  --- start training ---
+2024-08-02 23:05:38,316 [MainThread] [INFO ]  Server train time: 23.728538274765015
+2024-08-02 23:05:38,317 [MainThread] [INFO ]  --- start testing ---
+2024-08-02 23:05:39,892 [MainThread] [INFO ]  Test time 1.57s, Test loss: 0.04, Test accuracy: 58.51%
+2024-08-02 23:05:39,893 [MainThread] [INFO ]  
+-------- round 5 --------
+2024-08-02 23:05:39,893 [MainThread] [INFO ]  --- start training ---
+2024-08-02 23:06:04,062 [MainThread] [INFO ]  Server train time: 24.16770911216736
+2024-08-02 23:06:04,063 [MainThread] [INFO ]  --- start testing ---
+2024-08-02 23:06:05,677 [MainThread] [INFO ]  Test time 1.61s, Test loss: 0.03, Test accuracy: 62.59%
+2024-08-02 23:06:05,678 [MainThread] [INFO ]  
+-------- round 6 --------
+2024-08-02 23:06:05,678 [MainThread] [INFO ]  --- start training ---
+2024-08-02 23:06:29,487 [MainThread] [INFO ]  Server train time: 23.807185411453247
+2024-08-02 23:06:29,487 [MainThread] [INFO ]  --- start testing ---
+2024-08-02 23:06:31,084 [MainThread] [INFO ]  Test time 1.60s, Test loss: 0.03, Test accuracy: 64.86%
+2024-08-02 23:06:31,084 [MainThread] [INFO ]  
+-------- round 7 --------
+2024-08-02 23:06:31,085 [MainThread] [INFO ]  --- start training ---
+2024-08-02 23:06:54,466 [MainThread] [INFO ]  Server train time: 23.380279779434204
+2024-08-02 23:06:54,466 [MainThread] [INFO ]  --- start testing ---
+2024-08-02 23:06:55,974 [MainThread] [INFO ]  Test time 1.51s, Test loss: 0.03, Test accuracy: 67.45%
+2024-08-02 23:06:55,975 [MainThread] [INFO ]  
+-------- round 8 --------
+2024-08-02 23:06:55,975 [MainThread] [INFO ]  --- start training ---
+2024-08-02 23:07:19,541 [MainThread] [INFO ]  Server train time: 23.565610647201538
+2024-08-02 23:07:19,542 [MainThread] [INFO ]  --- start testing ---
+2024-08-02 23:07:21,007 [MainThread] [INFO ]  Test time 1.47s, Test loss: 0.03, Test accuracy: 68.71%
+2024-08-02 23:07:21,008 [MainThread] [INFO ]  
+-------- round 9 --------
+2024-08-02 23:07:21,008 [MainThread] [INFO ]  --- start training ---
+2024-08-02 23:07:44,353 [MainThread] [INFO ]  Server train time: 23.343896865844727
+2024-08-02 23:07:44,354 [MainThread] [INFO ]  --- start testing ---
+2024-08-02 23:07:46,039 [MainThread] [INFO ]  Test time 1.68s, Test loss: 0.03, Test accuracy: 70.75%
+2024-08-02 23:07:46,116 [MainThread] [INFO ]  Model saved at /home/uceehow/AGDS/baselines/saved_models/_global_model_r_9.pth
+2024-08-02 23:07:46,116 [MainThread] [INFO ]  Accuracies: [10.0, 14.61, 45.35, 54.19, 58.51, 62.59, 64.86, 67.45, 68.71, 70.75]
+2024-08-02 23:07:46,116 [MainThread] [INFO ]  Cumulative training time: [29.71, 55.43, 80.95, 106.44, 131.75, 157.53, 182.94, 207.83, 232.86, 257.9]
+2024-08-02 23:07:46,117 [MainThread] [INFO ]  Total training time 258.0s
